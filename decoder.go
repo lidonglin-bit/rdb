@@ -626,7 +626,14 @@ func (d *decode) checkHeader() error {
 	if !bytes.Equal(header[:5], []byte("REDIS")) {
 		return fmt.Errorf("rdb: invalid file format")
 	}
+	
+	
 
+	//version, _ := strconv.ParseInt(string(header[5:]), 10, 64)
+	//if version < 1 || version > 7 {
+	//	return fmt.Errorf("rdb: invalid RDB version number %d", version)
+	//}
+	
 
 	return nil
 }
